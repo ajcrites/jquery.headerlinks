@@ -82,38 +82,39 @@
         var numbers = this.options.numbers;
 
         this.toc.hide();
-        selector.each(function (index) {
+        selector.each($.proxy(function (index, elem) {
             all_links++;
             if (all_links >= this.options.minLength) {
                 this.toc.show();
             }
-            var $match = $(this);
+            var $match = $(elem);
             var link = 'headerlinks_ident' + index;
             var anchor = null;
             var matched_css = {};
             var index_text = '';
 
-            if (!this.id) {
-                this.id = link;
+            if (!elem.id) {
+                elem.id = link;
             }
             else {
-                link = this.id;
+                link = elem.id;
             }
 
             matches = false;
             $.each(this.options.hierarchy, function (hr, attributes) {
-                if (!match.is(hr)) {
-                    return false;
+                if (!$match.is(hr)) {
+                    //continue loop
+                    return;
                 }
                 matches = true;
-                var matched_css = attributes.css;
+                matched_css = attributes.css;
                 var num = attributes.num;
                 if (numbers && num) {
                     if (indeces[num] == undefined) {
                         indeces[num] = 1;
                     }
                     else {
-                        indeces]num]++;
+                        indeces[num]++;
                     }
                     $.each(indeces, function (index, val) {
                         if (num >= index) {
@@ -146,14 +147,14 @@
                 }
                 linker_text = index_text;
             }
-            linker_text += match.text();
+            linker_text += $match.text();
             linker.href = '#' + link;
             $(linker)
                 .css($.extend({'display': 'block'}, matched_css))
                 .text(linker_text)
             ;
             this.toc.append(linker);
-        });
+        }, this));
 
         this.toc.css(this.options.container);
         if (this.options.init && location.hash != '') {
