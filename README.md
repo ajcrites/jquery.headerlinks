@@ -1,11 +1,11 @@
-# jQuery Headerlinks Plugin (0.0)
+# jQuery Headerlinks Plugin (1.0)
 
 ## Introduction
 I created a jQuery plugin for practice and because I thought it would be a fairly good idea. Headerlinks dynamically and automatically (and quickly) creates an organized table-of-contents list anywhere you want on the page in any style.
 
 The headerlinks plugin (if you are using JS) is what is making the nice table-of-contents block at the top of this page.
 
-*## Purpose
+## Purpose
 The jQuery headerlinks plugin was designed to simplify and automate table-of-contents based on webpage hierarchy.
 
 ## Requirements
@@ -14,7 +14,7 @@ The jQuery headerlinks plugin was designed to simplify and automate table-of-con
 
 ## Documentation
 
-http://explosion-pills.com/development/jquery/plugins/headerlinks/#headerlinks\_ident2
+http://explosion-pills.com/development/jquery/plugins/headerlinks/#headerlinks_ident2
 
 ## Installation
 
@@ -22,5 +22,5 @@ Include jQuery.  Any time after that, include this script as you would any other
 
 ## Contributing
 
-* Use three spaces for indentation
+* Use a four space soft tab for indentation.
 * Write `if (`, `for (`, and `function (` as opposed to `if(`, `for(`, `function(`
